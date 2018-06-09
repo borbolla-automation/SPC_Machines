@@ -13,5 +13,5 @@ cursor.execute("SELECT GaugeID , GaugeName , BasicValue , Value , RangeUp , Rang
 row = cursor.fetchall()
 
 for data in row:
-	print(data[1])
+	print(data)
 
