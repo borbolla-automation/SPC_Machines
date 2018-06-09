@@ -20,10 +20,13 @@ import pyodbc
 # Some other example server values are
 # server = 'localhost\sqlexpress' # for a named instance
 # server = 'myserver,port' # to specify an alternate port
-server = '192.168.110.26' 
-database = 'GMSDB' 
-username = 'gas' 
-password = 'gas' 
-cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
-cursor = cnxn.cursor()
+con = pyodbc.connect('DRIVER=FreeTDS;SERVER=192.168.110.26;PORT=1433;DATABASE=GMSDB;UID=gas;PWD=gas;TDS_Version=7.0;')
+cursor = con.cursor()
+
+cursor.execute('SELECT GaugeID , GaugeName , BasicValue , Value , RegDate , RegTime FROM T1Gaugedata')
+
+row = cursor.fetchall()
+
+for data in row:
+	print(data)
 
