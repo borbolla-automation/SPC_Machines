@@ -23,7 +23,7 @@ import pyodbc
 con = pyodbc.connect('DRIVER=FreeTDS;SERVER=192.168.110.26;PORT=1433;DATABASE=GMSDB;UID=gas;PWD=gas;TDS_Version=7.0;')
 cursor = con.cursor()
 
-cursor.execute('SELECT GaugeID , GaugeName , BasicValue , Value , RegDate , RegTime FROM T1Gaugedata')
+cursor.execute("SELECT GaugeID , GaugeName , BasicValue , Value , RangeUp , RangeDown , RegDate , RegTime FROM T1GaugeData WHERE GaugeID = 'P07'")
 
 row = cursor.fetchall()
 
