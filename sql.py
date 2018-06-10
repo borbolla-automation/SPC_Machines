@@ -46,7 +46,7 @@ i = 1
 j = 0
 for data in row:
 	for cell in data:
-		sheet.update_cell(i,j,cell)
+		sheet.update_cell(i,j,str(cell))
 		j+=1
 	i+=1	
 
