@@ -45,6 +45,7 @@ print(max_today,max_total)
 i = 2
 j = 1
 for data in row:
+	j=1
 	for cell in data:
 		sheet.update_cell(i,j,str(cell))
 		j+=1
