@@ -13,7 +13,7 @@ cursor.execute("SELECT SeqNum , GaugeID , GaugeName , BasicValue , Value , Range
 
 row = cursor.fetchall()
 
-cursor.execute("SELECT TOP 1 SeqNum , RegDate  FROM T1GaugeData WHERE regDate = %s ORDER BY SeqNum Desc"%(today_str))
+cursor.execute("SELECT TOP 1 SeqNum , RegDate  FROM T1GaugeData WHERE regDate = '20180609' ORDER BY SeqNum Desc")#%(today_str))
 
 max_today = cursor.fetchone()
 
