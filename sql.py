@@ -21,7 +21,7 @@ cursor.execute("SELECT TOP 1 SeqNum , RegDate  FROM T1GaugeData WHERE GaugeID = 
 
 max_total =  cursor.fetchone()
 print(today_str)
-print(max_total,max_total)
+print(max_today,max_total)
 
 """for data in row:
 	print(data)"""
