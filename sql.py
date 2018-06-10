@@ -16,12 +16,15 @@ row = cursor.fetchall()
 cursor.execute("SELECT TOP 1 SeqNum , RegDate  FROM T1GaugeData WHERE regDate = %s ORDER BY SeqNum Desc"%(today_str))
 
 max_today = cursor.fetchone()
+max_today = int(max_today[0])
+
 
 cursor.execute("SELECT TOP 1 SeqNum , RegDate  FROM T1GaugeData WHERE GaugeID = 'P07' ORDER BY SeqNum Desc")
 
 max_total =  cursor.fetchone()
+max_total = int(max_total[0])
 print(today_str)
-print(int(max_today[0]),int(max_total[0]))
+print(max_today,max_total)
 
 """for data in row:
 	print(data)"""
