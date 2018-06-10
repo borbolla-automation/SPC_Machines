@@ -9,7 +9,7 @@ print(client)
 
 workbook = client.open_by_key('1o66bESi_ln3BL4RIHkROiljuELhL6HRdLfqIhCxXOsU')
 
-sheet = get_worksheet(10)
+sheet = workbook.get_worksheet(10)
 
 records = sheet.get_all_records()
 print(records)
