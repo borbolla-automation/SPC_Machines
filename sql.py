@@ -47,7 +47,12 @@ j = 1
 for data in row:
 	j=1
 	for cell in data:
-		sheet.update_cell(i,j,str(cell))
+		try:
+			sheet.update_cell(i,j,str(cell))
+			print(cell)
+		except APIError as e:
+			print('exception')
+		
 		j+=1
 	i+=1	
 
