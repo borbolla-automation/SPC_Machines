@@ -9,7 +9,7 @@ con = pyodbc.connect('DRIVER=FreeTDS;SERVER=192.168.110.26;PORT=1433;DATABASE=GM
 cursor = con.cursor()
 today_str = '%s'%(str(datetime.datetime.now().year)+str("%02d"%(datetime.datetime.now().month,))+str("%02d"%(datetime.datetime.now().day),))
 
-cursor.execute("SELECT SeqNum , GaugeID , GaugeName , BasicValue , Value , RangeUp , RangeDown , RegDate , RegTime FROM T1GaugeData WHERE GaugeID = 'P07' AND RegDate = %s"%(today_str))
+cursor.execute("SELECT SeqNum , GaugeID , GaugeName , BasicValue , Value , RangeUp , RangeDown , RegDate , RegTime , result FROM T1GaugeData WHERE GaugeID = 'P07' AND RegDate = %s"%(today_str))
 
 row = cursor.fetchall()
 

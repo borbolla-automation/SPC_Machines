@@ -7,7 +7,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('SPCMachines-47b188100d
 client = gspread.authorize(creds)
 print(client)
 
-sheet = client.open('STATISTICAL PROCESS CONTROL').sheet1
+sheet = client.open('STATISTICAL PROCESS CONTROL').sheet10
 
 records = sheet.get_all_records()
 print(records)
