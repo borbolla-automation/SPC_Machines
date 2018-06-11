@@ -50,7 +50,7 @@ for data in row:
 		try:
 			sheet.update_cell(i,j,str(cell))
 			print(cell)
-		except  as e:
+		except  OperationalError as e:
 			print('exception')
 		
 		j+=1
