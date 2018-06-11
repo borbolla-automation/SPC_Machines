@@ -13,7 +13,7 @@ class ODBCQuery(object):
 	"""docstring for ODBCQuery"""
 	def __init__(self, ip):
 		self.ip = ip
-		self.con = pyodbc.connect('DRIVER=FreeTDS;SERVER=192.168.110.26;PORT=1433;DATABASE=GMSDB;UID=gas;PWD=gas;TDS_Version=7.0;')
+		self.con = pyodbc.connect('DRIVER=FreeTDS;SERVER=%s;PORT=1433;DATABASE=GMSDB;UID=gas;PWD=gas;TDS_Version=7.0;'%(self.ip))
 		self.cursor = self.con.cursor()
 		self.today_str = '%s'%(str(datetime.datetime.now().year)+str("%02d"%(datetime.datetime.now().month,))+str("%02d"%(datetime.datetime.now().day),))
 
