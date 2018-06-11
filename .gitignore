@@ -105,3 +105,7 @@ venv.bak/
 
 #json file
 *.json
+
+#credentials
+credentials.py
+credentials.pyc
