@@ -6,7 +6,7 @@ from sql import ODBCQuery
 #xls = Xlsx('SPC_test')
 odbc = ODBCQuery('192.168.110.26')
 
-today_data  = odbc.today_registers()
+today_data  = odbc.today_registers('P07')
 print(today_data)
 
 #xls.write_data()
