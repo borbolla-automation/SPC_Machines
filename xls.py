@@ -102,7 +102,7 @@ class Xlsx(object):
 			date_time = self.date_separator(list_line[7],list_line[8])
 			list_line.pop(7)
 			list_line.pop(7)
-			list_line.insert(7,date_time)
+			list_line.insert(7,date_time.strftime("%Y-%m-%d %H:%M:%S"))
 			matrix.append(list_line)
 
 		return matrix	
