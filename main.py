@@ -10,6 +10,8 @@ smail = SendMail(['administracion@borbolla-automation.com' , 'ingenieria@borboll
 today_data  = odbc.today_registers('P07')
 print(today_data)
 
+today_data = xls.query_modificator(today_data)
+
 xls.write_data(today_data)
 xls.close()
 

@@ -49,13 +49,13 @@ class Xlsx(object):
 		self.chart1.add_series({
 		    'name':       '=Data_DP1!$B$1',
 		    #'categories': '=Data_DP1!$A$2:$A$7',
-		    'values':     '=Data_DP1!B2:B7',
+		    'values':     '=Data_DP1!B2:B1048576',
 		})
 
 		self.chart1.add_series({
 		    'name':       '=Data_DP1!$D$1',
 		    #'categories': '=Data_DP1!$A$2:$A$7',
-		    'values':     '=Data_DP1!$D$2:$D$7',
+		    'values':     '=Data_DP1!$D$2:$D$1048576',
 		    'line': {
 		            'color': 'red',
 		            'width': 2,
@@ -68,7 +68,7 @@ class Xlsx(object):
 		self.chart1.add_series({
 		    'name':       ['Data_DP1', 0, 2],
 		    'categories': ['Data_DP1', 1, 0, 6, 0],
-		    'values':     ['Data_DP1', 1, 2, 6, 2],
+		    'values':     ['Data_DP1', 1, 2, 6, 1048576],
 		})
 
 		# Add a chart title and some axis labels.
@@ -81,6 +81,31 @@ class Xlsx(object):
 
 		# Add the chart to the chartsheet.
 		self.chartsheet.set_chart(chart1)
+
+	def date_separator(self , date , time):
+		year  = date[0:4]
+		month = date[4:6]
+		day   = date[6:]
+
+		hour   = time[0:2]
+		minute = time[2:4]
+		second = time[4:]
+
+		date_time = datetime.datetime(year = year , month = month , day = day , hour = hour , minute = minute , second = second)
+
+		return date_time
+
+	def query_modificator(self , query ):
+		matrix = []
+		for line in query:
+			list_line = list(line)
+			date_time = date_separator(list_line[7],list_line[8])
+			list_line.pop(7)
+			list_line.pop(7)
+			list_line.insert(7,date_time)
+			matrix.append(list_line)
+
+		return matrix	
 
 	def close(self):
 	    self.workbook.close()
