@@ -91,7 +91,7 @@ class Xlsx(object):
 		minute = time[2:4]
 		second = time[4:]
 
-		date_time = datetime.datetime(year = year , month = month , day = day , hour = hour , minute = minute , second = second)
+		date_time = datetime.datetime(year = int(year) , month = int(month) , day = int(day) , hour = int(hour) , minute = int(minute) , second = int(second))
 
 		return date_time
 
