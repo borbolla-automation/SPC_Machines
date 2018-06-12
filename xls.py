@@ -99,7 +99,7 @@ class Xlsx(object):
 		matrix = []
 		for line in query:
 			list_line = list(line)
-			date_time = date_separator(list_line[7],list_line[8])
+			date_time = self.date_separator(list_line[7],list_line[8])
 			list_line.pop(7)
 			list_line.pop(7)
 			list_line.insert(7,date_time)
