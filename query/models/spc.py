@@ -63,3 +63,5 @@ if __name__ == '__main__':
     model = 'ST170125'
     for number in range(4):
         Machine.create(name = '%s-%s'%(model,number+1) , basic_value = 92.2 , range_up = 92.2+0.05 ,range_down = 92.2-0.05)
+
+    machine = peewee.get
